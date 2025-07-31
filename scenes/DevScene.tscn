@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cuopftxmsy0qt"]
+
+[ext_resource type="Script" uid="uid://jyn6mt4holxb" path="res://scripts/game_manager.gd" id="1_af5vw"]
+[ext_resource type="Script" uid="uid://hvlxna0wqah0" path="res://common/base_entity/base_entity.gd" id="2_wh54w"]
+[ext_resource type="Script" uid="uid://ctbwrl8c027kr" path="res://common/base_action/base_action.gd" id="3_cpykq"]
+[ext_resource type="Texture2D" uid="uid://dccuek472u8v3" path="res://assets/player_placeholder.png" id="4_cpykq"]
+
+[sub_resource type="Resource" id="Resource_cpykq"]
+script = ExtResource("3_cpykq")
+step_length = 1
+end = false
+on_action_velocity = Vector2(100, 0)
+metadata/_custom_type_script = "uid://ctbwrl8c027kr"
+
+[sub_resource type="Resource" id="Resource_3n5q5"]
+script = ExtResource("3_cpykq")
+step_length = 1
+end = false
+on_action_velocity = Vector2(-40, 0)
+metadata/_custom_type_script = "uid://ctbwrl8c027kr"
+
+[sub_resource type="Resource" id="Resource_eju2h"]
+script = ExtResource("3_cpykq")
+step_length = 1
+end = true
+on_action_velocity = Vector2(125, -150)
+metadata/_custom_type_script = "uid://ctbwrl8c027kr"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh54w"]
+size = Vector2(11, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3n5q5"]
+size = Vector2(512, 54)
+
+[node name="DevScene" type="Node2D"]
+script = ExtResource("1_af5vw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="BaseEntity" type="CharacterBody2D" parent="Entities"]
+position = Vector2(102, 310)
+script = ExtResource("2_wh54w")
+algorithm = Dictionary[int, ExtResource("3_cpykq")]({
+0: SubResource("Resource_cpykq"),
+1: SubResource("Resource_3n5q5"),
+2: SubResource("Resource_eju2h")
+})
+metadata/_custom_type_script = "uid://hvlxna0wqah0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Entities/BaseEntity"]
+texture = ExtResource("4_cpykq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entities/BaseEntity"]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_wh54w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(236, 347)
+shape = SubResource("RectangleShape2D_3n5q5")
+one_way_collision_margin = 0.0
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(99, 303)
+zoom = Vector2(2, 2)
