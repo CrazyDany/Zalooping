@@ -29,21 +29,6 @@ metadata/_custom_type_script = "uid://ctbwrl8c027kr"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh54w"]
 size = Vector2(11, 7)
 
-[sub_resource type="Animation" id="Animation_3n5q5"]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 0.307786),
-"update": 0,
-"values": [Vector2(1.1, 0.9), Vector2(1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_eju2h"]
 length = 0.001
 tracks/0/type = "value"
@@ -70,6 +55,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_rtbar"]
 resource_name = "attack"
@@ -80,10 +77,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.560251, 0.0]
+"values": [0.647908, -0.0458199, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -92,10 +89,37 @@ tracks/1/path = NodePath("Sprite2D:scale")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.196667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.830324, 1.56716), Vector2(1.11827, 0.911904), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:skew")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.19734),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.9, 1.1), Vector2(1, 1)]
+"values": [0.486947, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3n5q5"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 0.307786),
+"update": 0,
+"values": [Vector2(1.1, 0.9), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rtbar"]
@@ -117,21 +141,6 @@ metadata/_custom_type_script = "uid://ctbwrl8c027kr"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eju2h"]
 size = Vector2(10, 10)
-
-[sub_resource type="Animation" id="Animation_s8o21"]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.433333, 0.566667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.05, 0.95), Vector2(1.05, 0.95), Vector2(1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_20uoo"]
 length = 0.001
@@ -171,6 +180,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_q2byh"]
 resource_name = "hurt"
@@ -178,25 +199,64 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:self_modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.955922, 0.425058, 0.50203, 1), Color(1, 1, 1, 1)]
+"values": [Color(0.955922, 0.425058, 0.50203, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite2D:skew")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.125),
+"times": PackedFloat32Array(0, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.102974, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, 0.279253, 0.0]
+"values": [0.291488, -0.126055, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.823818, 1.41352), Vector2(1.15974, 0.84252), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s8o21"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.566667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 0.95), Vector2(1.05, 0.95), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q2byh"]
@@ -224,6 +284,7 @@ animation_player = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://hvlxna0wqah0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Entities/Player"]
+position = Vector2(1, 1.35899e-05)
 texture = ExtResource("4_cpykq")
 offset = Vector2(0, -8)
 
